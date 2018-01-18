@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Time</title>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
+</head>
+<body>
+    <div class="container">
+         <!-- Jumbotron Title -->
+      <div class="jumbotron">
+        <h1 class="text-center">Anytime is Train Time</h1>
+        <h3 class="text-center">"Choo Choo. Chee Chee."</h3>
+      </div>
+
+      <div id="parameters">
+            <h4>Add Train</h4>
+
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Train Time</label>
+          <input type="search" class="form-control" id="search-input">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Destination</label>
+          <input type="number" class="form-control" id="limit-input">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">First Train Time (HH:mm - miltary time)</label>
+            <input type="year" class="form-control" id="start-input" placeholder="YYYYMMDD">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Frequency (min)</label>
+            <input type="year" class="form-control" id="end-input" placeholder="YYYYMMDD">
+          </div>
+            
+            <button id="submit" class="btn btn-default">Submit</button>
+            <!-- <button type="submit" class="btn btn-default">Clear Results</button> -->
+          
+        
+       </form>
+       </div>  
+
+    </div>
+</body>
+</html>
