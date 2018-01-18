@@ -31,3 +31,26 @@
   });
 
 }
+
+
+// $("#submit").on("click", function(event) {
+//     // event.preventDefault() prevents submit button from trying to send a form.
+//     // Using a submit button instead of a regular button allows the user to hit
+//     // "Enter" instead of clicking the button if desired
+//     event.preventDefault();
+
+//     // Write code to grab the text the user types into the input field
+//     // Write code to add the new animals into the animals array
+//     console.log($("#submit").val());
+
+//     var userInput = $("#submit").val().trim();
+  
+//     // console.log("Current: " + topics);
+//     // topics.push(userInput);
+//     // console.log("New Array: " + topics); 
+//     // The renderButtons function is called, rendering the list of animal buttons
+//     renderButtons();
+//   });
+
+//   $(document).on("click", displayTrainInfo);
+//   // Calling the renderButtons function to display the initial list of animals
