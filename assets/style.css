@@ -1,11 +1,12 @@
 body {
-    background: rgb(90, 87, 87);
+    /* background: rgb(90, 87, 87); */
+    background-image: url('images/tracks5.jpg');
     color: grey;
 }
 
 .container-schedule {
     background: white;
-    border: 2px solid blue;
+    border: 2px solid black;
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 10px;
@@ -13,7 +14,7 @@ body {
 }
 
 #train-data {
-    background: blue;
+    background: rgb(94, 9, 230);
     color: white;
     padding-top: 5px;
     margin-left: -10px;
@@ -28,13 +29,13 @@ body {
 .parameters {
     background: white;
     color: grey;
-    border: 2px solid blue;
+    border: 2px solid black;
     border-radius: 3px;
     padding-bottom: 10px;
 }
 
 #heading {
-    background: blue;
+    background: rgb(94, 9, 230);
     color: white;
     padding-top: 10px;
 }
@@ -50,7 +51,7 @@ body {
 }
 
 .jumbotron {
-    background: rgb(168, 78, 4);
+    background: rgb(53, 54, 53);
     color: white;
 }
 
