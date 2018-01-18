@@ -1,12 +1,28 @@
 body {
-    background: rgb(128, 216, 238);
+    background: rgb(90, 87, 87);
     color: grey;
 }
 
+.container-schedule {
+    background: white;
+    border: 2px solid blue;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+}
+
 #train-data {
-    background: green;
+    background: blue;
     color: white;
-    padding-top: 10px;
+    padding-top: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+}
+
+.table{
+    color: grey;
 }
 
 .parameters {
@@ -18,7 +34,7 @@ body {
 }
 
 #heading {
-    background: orange;
+    background: blue;
     color: white;
     padding-top: 10px;
 }
