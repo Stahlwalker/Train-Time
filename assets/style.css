@@ -1,3 +1,48 @@
 body {
     background: rgb(128, 216, 238);
+    color: grey;
+}
+
+#train-data {
+    background: green;
+    color: white;
+    padding-top: 10px;
+}
+
+.parameters {
+    background: white;
+    color: grey;
+    border: 2px solid blue;
+    border-radius: 3px;
+    padding-bottom: 10px;
+}
+
+#heading {
+    background: orange;
+    color: white;
+    padding-top: 10px;
+}
+
+.form-group {
+    background: white;
+    padding: 0px 10px 0px 10px;
+}
+
+.trainform {
+    /* background: red; */
+    border: 5px;
+}
+
+.jumbotron {
+    background: rgb(168, 78, 4);
+    color: white;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+h4 {
+    margin-left: 10px;
+    padding-bottom: 14px;
 }

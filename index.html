@@ -17,8 +17,8 @@
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
 
-      <!-- CSS -->
-      <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
     <div class="container">
@@ -28,8 +28,14 @@
         <h3 class="text-center">"Choo Choo. Chee Chee."</h3>
       </div>
 
-      <div id="parameters">
-            <h4>Add Train</h4>
+      <div id="train-data">
+          <h4>Current Train Schedule</h4>
+      </div>
+
+      <div class="parameters">
+          <div id="heading">
+            <h4>Add Train</h4> 
+          </div>
 
       <form>
         <div class="form-group">
@@ -42,16 +48,16 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">First Train Time (HH:mm - miltary time)</label>
-            <input type="year" class="form-control" id="start-input" placeholder="YYYYMMDD">
+            <input type="year" class="form-control" id="start-input" placeholder="">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Frequency (min)</label>
-            <input type="year" class="form-control" id="end-input" placeholder="YYYYMMDD">
+            <input type="year" class="form-control" id="end-input" placeholder="">
           </div>
             
             <button id="submit" class="btn btn-default">Submit</button>
             <!-- <button type="submit" class="btn btn-default">Clear Results</button> -->
-          
+       
         
        </form>
        </div>  
