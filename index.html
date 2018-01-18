@@ -58,25 +58,23 @@
 
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Train Time</label>
-          <input type="search" class="form-control" id="search-input">
+          <label for="exampleInputTrainName">Train Name</label>
+          <input type="text" class="form-control" id="search-input">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Destination</label>
-          <input type="number" class="form-control" id="limit-input">
+          <label for="exampleInputDestination">Destination</label>
+          <input type="search" class="form-control" id="search-input" placeholder=""> 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">First Train Time (HH:mm - miltary time)</label>
-            <input type="year" class="form-control" id="start-input" placeholder="">
+            <label for="exampleInputFirstTrain">First Train Time (HH:mm - miltary time)</label>
+            <input type="time" class="form-control" id="time" placeholder="">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Frequency (min)</label>
-            <input type="year" class="form-control" id="end-input" placeholder="">
+            <label for="exampleInputFrequency">Frequency (min)</label>
+            <input type="number" class="form-control" min = "1" max ="60" placeholder="">
           </div>
             
             <button id="submit" class="btn btn-default">Submit</button>
-            <!-- <button type="submit" class="btn btn-default">Clear Results</button> -->
-       
         
        </form>
        </div>  
