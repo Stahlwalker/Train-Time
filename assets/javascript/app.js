@@ -10,7 +10,7 @@
   };
   firebase.initializeApp(config);
 
-  var database = firbase.database();
+  var database = firebase.database();
 
   var trainName = "";
   var destination = "";
