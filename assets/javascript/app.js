@@ -9,16 +9,11 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// $("#timepicker1").timepicker({
+//     format : 'DD/MM/YYYY HH:mm'
+//  });
+
 var database = firebase.database();
-
-
-// Creates local "temporary" object for holding train data
-// var newTrain = {
-// 	name: name,
-// 	destination: destination,
-// 	firstTrain: firstTrainUnix,
-// 	frequency: frequency
-// }
 
 var name = "";
 var destination = "";
