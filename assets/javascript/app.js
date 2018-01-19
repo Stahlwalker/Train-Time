@@ -40,7 +40,7 @@ $("#submit").on("click", function() {
     
 
     // Change what is saved in firebase
-    database.ref().set({
+    database.ref().push({
       name: name,
       destination: destination,
       firstTrain: firstTrain,
