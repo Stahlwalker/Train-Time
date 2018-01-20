@@ -37,7 +37,11 @@ body {
 #heading {
     background: rgb(94, 9, 230);
     color: white;
-    padding-top: 10px;
+    padding-top: 9px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
 }
 
 .form-group {
@@ -64,7 +68,7 @@ h4 {
     padding-bottom: 14px;
 }
 
-.train-info {
+/* .train-info {
     padding: 8px;
     line-height: 1.42857143;
-}
+} */

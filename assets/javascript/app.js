@@ -18,6 +18,7 @@ $("#submit").on("click", function (event) {
     // Prevent the page from refreshing
     event.preventDefault();
 
+    console.log($("#search-destination").val());
     // Get inputs
     var name = $("#search-name").val().trim();
     var destination = $("#search-destination").val().trim();
@@ -38,10 +39,10 @@ $("#submit").on("click", function (event) {
     database.ref().push(newTrain);
 
        // Logs everything to console
-       console.log(newTrain.name);
-       console.log(newTrain.destination);
-       console.log(newTrain.firstTrain);
-       console.log(newTrain.frequency);
+    //    console.log(newTrain.name);
+    //    console.log(newTrain.destination);
+    //    console.log(newTrain.firstTrain);
+    //    console.log(newTrain.frequency);
 
    // Alert
     alert("New train successfully added");
@@ -65,19 +66,20 @@ database.ref().on("child_added", function (childSnapshot, prevChildkey) {
 
 
     // Store everything into a variable.
-    var train2 = childSnapshot.val().name;
-    var destination2 = childSnapshot.val().destination;
-    var firstTrain2 = childSnapshot.val().firstTrain;
-    var frequency2 = childSnapshot.val().frequency;
+    var train = childSnapshot.val().name;
+    var destination = childSnapshot.val().destination;
+    var firstTrain = childSnapshot.val().firstTrain;
+    var frequency = childSnapshot.val().frequency;
 
       // Train Info
-      console.log(name);
-      console.log(destinatino);
-      console.log(firstTrain);
-      console.log(frequency);
+    //   console.log(name);
+    //   console.log(destination);
+    //   console.log(firstTrain);
+    //   console.log(frequency);
 
+    
        // Prettify the employee start
-    var firstTimeConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
+    var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
     console.log(firstTimeConverted);
 
     // Calculate the months worked using hardcore math
@@ -104,7 +106,7 @@ database.ref().on("child_added", function (childSnapshot, prevChildkey) {
 
 
     // Change the HTML
-    $(".tbody").append("<tr><td>" + train2 + "</td><td>" + destination2 + "</td><td>" +
+    $("#train-table > tbody").append("<tr><td>" + train + "</td><td>" + destination + "</td><td>" +
         firstTimeConverted + "</td><td>" + +"</td><td>" + tMinutesTillTrain + "</td><td>" + nextTrain + "</td></tr>");
 
    
