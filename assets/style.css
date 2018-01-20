@@ -63,3 +63,8 @@ h4 {
     margin-left: 10px;
     padding-bottom: 14px;
 }
+
+.train-info {
+    padding: 8px;
+    line-height: 1.42857143;
+}
