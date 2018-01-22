@@ -9,61 +9,52 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-
 var database = firebase.database();
 
-// 2. Button for adding Employees
-$("#submit").on("click", function (event) {
-    // Prevent the page from refreshing
-    event.preventDefault();
+// Button for adding Trains
+$("#submit").on("click", function () {
 
-    console.log($("#search-destination").val());
     // Get inputs
     var name = $("#search-name").val().trim();
     var destination = $("#search-destination").val().trim();
-    var firstTrain = $("#search-time").val().trim();
+    var firstTrain = moment($("#search-time").val().trim(), "HH:mm").format("X");
     var frequency = $("#search-frequency").val().trim();
 
 
-       // Creates local "temporary" object for holding employee data
+    // Test for variables entered
+    console.log(name);
+    console.log(destination);
+    console.log(firstTrain);
+    console.log(frequency);
+
+
+    // Creates local "temporary" object for holding train data
     var newTrain = {
         name: name,
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency,
-        //   dateAdded: firebase.database.ServerValue.TIMESTAMP
     };
 
-      // Uploads employee data to the database
+    // Uploads train data to the database
     database.ref().push(newTrain);
 
-       // Logs everything to console
-    //    console.log(newTrain.name);
-    //    console.log(newTrain.destination);
-    //    console.log(newTrain.firstTrain);
-    //    console.log(newTrain.frequency);
-
-   // Alert
+    // Alert
     alert("New train successfully added");
-
-    // //   Change the HTML to reflect
-    // $("#search-name").text(name);
-    // $("#search-destination").text(destination);
-    // $("#search-time").text(firstTrain);
-    // $("#search-frequency").text(frequency);
+    console.log(alert);
 
     $("#search-name").val("");
     $("#search-destination").val("");
     $("#search-time").val("");
     $("#search-frequency").val("");
+
+    return false;
+
 });
-// $("").text(tMinutesTillTrain);
-// $("").text(nextTrain);
+
 database.ref().on("child_added", function (childSnapshot, prevChildkey) {
 
     console.log(childSnapshot.val());
-
 
     // Store everything into a variable.
     var train = childSnapshot.val().name;
@@ -71,48 +62,21 @@ database.ref().on("child_added", function (childSnapshot, prevChildkey) {
     var firstTrain = childSnapshot.val().firstTrain;
     var frequency = childSnapshot.val().frequency;
 
-      // Train Info
-    //   console.log(name);
-    //   console.log(destination);
-    //   console.log(firstTrain);
-    //   console.log(frequency);
-
-    
-       // Prettify the employee start
-    var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
-    console.log(firstTimeConverted);
-
-    // Calculate the months worked using hardcore math
-    // To calculate the months worked
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
-    // Difference between the times
-    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+    var diffTime = moment().diff(moment.unix(firstTrain), "minutes");
+    var timeRemainder = diffTime % frequency;
+    var minutes = frequency - timeRemainder;
+    var nextTrainArrival = moment().add(minutes, "m").format("HH:mm");
 
-    // Time apart (remainder)
-    var tRemainder = diffTime % frequency;
-    console.log(tRemainder);
+    console.log(minutes);
+    console.log(nextTrainArrival);
+    console.log(moment().format("HH:mm"));
+    console.log(nextTrainArrival);
 
-    // Minute Until Train
-    var tMinutesTillTrain = frequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-
-    // Next Train
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    // Append train info to table on page
+    $("#train-table > tbody").append("<tr><td>" + train + "</td><td>" + destination + "</td><td>" + frequency + " mins" + "</td><td>" + nextTrainArrival + "</td><td>" + minutes + "</td></tr>");
 
 
-
-    // Change the HTML
-    $("#train-table > tbody").append("<tr><td>" + train + "</td><td>" + destination + "</td><td>" +
-        firstTimeConverted + "</td><td>" + +"</td><td>" + tMinutesTillTrain + "</td><td>" + nextTrain + "</td></tr>");
-
-   
 });
-
-
- // If any errors are experienced, log them to console.
-    // }, function (errorObject) {
-    //     console.log("Errors handled " + errorObject.code);
